@@ -28,7 +28,7 @@ function App() {
 
     try {
       setLoading(true)
-      const response = await axios.post('http://localhost:5000/upload', formData)
+      const response = await axios.post('https://zenth-igjk.onrender.com/upload', formData)
       setExtractedText(response.data.text)
       setQuestions('')
       setTimeout(() => {
@@ -46,7 +46,7 @@ function App() {
     if (!extractedText) return
     try {
       setGenerating(true)
-      const response = await axios.post('http://localhost:5000/generate-questions', {
+      const response = await axios.post('https://zenth-igjk.onrender.com/generate-questions', {
         text: extractedText,
         type: questionType
       })
